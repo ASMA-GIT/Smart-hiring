@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="web-page">
+        <div class="home">
+            <div class="top-nav">
+                <div class="logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="btns">
+                    <div><a href="login.html">Login</a></div>
+                    <div><a href="signup.html">Sign Up</a></div>
+                </div>
+            </div>
+            <div class="home-content">
+                <div class="tagline">
+                    <div>
+                        <h1>Get The <span class="highlight">Right Candidate </span>You Require</h1>
+                    </div>
+                    <div>
+                        <p>More than 90% Successful hiring</p>
+                        <h2>Featured Job Circulars</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features">
+            <div class="features-content">
+                <div class="features-title">
+                    <p>One Platform  <br>Many <span>Solutions</span></p>
+                </div>
+                <div class="features-container">
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im1.png" alt="">
+                        </div>
+                        <div >
+                            <p class="dept">Marketing & Communication</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im2.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Design & Development</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im3.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Human Research & Development</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im4.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Finance
+                                Management</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im5.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Government
+                                Jobs</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im6.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Business &
+                                Consulting</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im7.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Customer
+                                Support Care</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div class="card-im">
+                            <img src="images/im8.png" alt="">
+                        </div>
+                        <div>
+                            <p class="dept">Project Management</p>
+                            <p>237 Candidates Available</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section class="candidates" id="candidates">
+            <div class="wrapper">
+                <div class="search_box">
+                    <div class="dropdown">
+                        <div class="default_option" id="defaultOption">All</div>  
+                        <ul id="listitems">
+                        </ul>
+                    </div>
+                    <div class="search_field">
+                      <input type="search" class="input" placeholder="Search" id="searchbox" oninput="searchuser()">
+                      <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </div>
+            <div class="row" id="row">
+                
+            </div>
+        </section>
+        
+        <div class="info">
+            <div class="info-content">
+                <div class="info-img">
+                    <img src="images/info.png" alt="">
+                </div>
+                <div class="info-text">
+                    <p>
+                        <span>
+                            Get Matched The Most 
+                        Valuable Jobs, Just Drop 
+                        Your CV at Staffing Solutions
+                        </span><br>
+                        In the subject line of email, write your name, the description of the position you want to apply
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="try-section">
+            <div class="try">
+                <div class="try-text">
+                    <h2>Try Manatal for free during 14-day with no commitment.</h2>
+                    <div><p>No credit card required </p><p>No commitment</p></div>
+                </div>
+                <div class="try-btn">
+                    <button>Try it now</button>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </section>
+    
+    <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script>
+            $(".default_option").click(function(){
+        $(".dropdown ul").addClass("active");
+      });
+      
+      $(".dropdown ul li").click(function(){
+        var text = $(this).text();
+        $(".default_option").text(text);
+        let cards = document.querySelectorAll('.user')
+        let loc =document.querySelectorAll('.location')
+        let search_query = document.getElementById("defaultOption").innerHTML;
+        for (var i = 0; i < cards.length; i++) {
+          if(loc[i].innerText.toLowerCase()
+            .includes(search_query.toLowerCase())) {
+              cards[i].classList.remove("is-hidden");
+          } else {
+            cards[i].classList.add("is-hidden");
+          }
+        }
+        $(".dropdown ul").removeClass("active");
+      });
+        </script>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
